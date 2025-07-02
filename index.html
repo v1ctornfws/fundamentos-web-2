@@ -10,7 +10,7 @@
 <body>
     <h1>Informacion personal</h1>
     <p id="listado">
-        
+
     </p>
     <script>
         lista = [
@@ -30,8 +30,8 @@
                 "ciudad": "Ciudad de México"
             }
         ]
-        // localStorage.setItem("datos", JSON.stringify(lista));
-        // lst = localStorage.getItem("datos");
+        localStorage.setItem("datos", JSON.stringify(lista));
+        lst = localStorage.getItem("datos");
         lst = JSON.parse(localStorage.getItem("datos"));
         // console.log(typeof(lst));
         lst.forEach(element => {
