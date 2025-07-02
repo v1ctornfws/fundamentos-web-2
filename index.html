@@ -3,45 +3,44 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Círculo simple</title>
-    <style>
-        .circulo {
-            width: 300px;
-            height: 300px;
-            border: 3px solid blue;
-            border-radius: 50%;
-        }
-
-        button {
-            font-size: 20px;
-            /* letra grande */
-            background-color: blue;
-            /* fondo azul */
-            color: white;
-            /* letra gris */
-            padding: 10px 20px;
-            /* tamaño del botón */
-            border: none;
-            /* sin borde feo */
-            border-radius: 5px;
-            /* esquinas redondeadas */
-            margin: 5px;
-            /* separación entre botones */
-            cursor: pointer;
-            /* mano al pasar */
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 2.3</title>
 </head>
 
 <body>
-
-    <div class="circulo" id="circulo"></div>
-
-    <button onclick="document.getElementById('circulo').style.backgroundColor = 'red'">Rojo</button>
-    <button onclick="document.getElementById('circulo').style.backgroundColor = 'blue'">Azul</button>
-    <button onclick="document.getElementById('circulo').style.backgroundColor = 'green'">Verde</button>
-    <button onclick="document.getElementById('circulo').style.backgroundColor = 'brown'">Café</button>
-
+    <h1>Informacion personal</h1>
+    <p id="listado">
+        
+    </p>
+    <script>
+        lista = [
+            {
+                "nombre": "Juan Pérez",
+                "edad": 30,
+                "ciudad": "Monterrey"
+            },
+            {
+                "nombre": "María García",
+                "edad": 25,
+                "ciudad": "Guadalajara"
+            },
+            {
+                "nombre": "Carlos López",
+                "edad": 35,
+                "ciudad": "Ciudad de México"
+            }
+        ]
+        // localStorage.setItem("datos", JSON.stringify(lista));
+        // lst = localStorage.getItem("datos");
+        lst = JSON.parse(localStorage.getItem("datos"));
+        // console.log(typeof(lst));
+        lst.forEach(element => {
+            let elements = document.getElementById("listado");
+            let div = document.createElement("div");
+            div.innerHTML = `Nombre: ${element.nombre}, Edad: ${element.edad}, Ciudad: ${element.ciudad}`;
+            elements.appendChild(div);
+        })
+    </script>
 </body>
 
 </html>
